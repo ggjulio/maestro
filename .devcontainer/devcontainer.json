@@ -1,0 +1,32 @@
+{
+    "build": {
+        // To get a workspace faster, it would be better to build/push the image to a registry and then reference it.
+        "dockerfile": "Dockerfile"
+    },
+    "hostRequirements": {
+        "cpus": 4,
+        "memory": "8gb",
+        "storage": "32gb"
+    },
+    // postCreateCommand: ".devcontainer/setup.sh", # is this the right lifecycle ? I don't remember...need to check
+    "features": {
+        // Same, it can be installed in the dockerfile,
+        "ghcr.io/devcontainers/features/rust:1": {},
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    },
+    "customizations": {
+        "codespaces": {
+            "repositories": {
+                // "llenotre/maestro-install": {
+                //     "permissions": {
+                //         "contents": "write",
+                //         "pull_requests": "write",
+                //     }
+                // }
+            }
+        },
+        "vscode": {
+            "extensions": []
+        }
+    }
+}
